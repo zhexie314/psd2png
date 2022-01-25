@@ -1,9 +1,9 @@
 import sys
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-# from PIL import Image
-from psd_tools import PSDImage
+# from PyQt5.QtCore import *
+# from PyQt5.QtGui import *
+from PIL import Image
+# from psd_tools import PSDImage
 from pathlib import Path
 
 
@@ -64,9 +64,11 @@ def findSavePath(file_path,file_type):
 
 
 def psd2png(path,savePath):
-	psd = PSDImage.open(path)
-	# merged_image = psd.as_PIL()
-	psd.save(savePath)
+	img=Image.open(path)
+	img.save(savePath)
+	# psd = PSDImage.open(path)
+	# # merged_image = psd.as_PIL()
+	# psd.save(savePath)
 
 
 
